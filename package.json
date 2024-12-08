@@ -9,9 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
+    "@mui/icons-material": "^6.1.9",
+    "@mui/material": "^6.1.9",
+    "@mui/styled-engine-sc": "^6.1.9",
+    "i": "^0.3.7",
+    "next": "15.0.3",
+    "npm": "^10.9.2",
+    "quill": "^2.0.3",
+    "quill-blot-formatter": "^1.0.5",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
-    "next": "15.0.3"
+    "react-quill": "^2.0.0",
+    "react-quilljs": "^2.0.4",
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "postcss": "^8",

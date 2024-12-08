@@ -32,12 +32,22 @@ const ReqForm = () => {
 
   const handleItem = (e) => setInputValue(e.target.value);
 
+  // const handleSubmit = () => {
+  //   if (inputValue && !data.some((d) => d.item === inputValue)) {
+  //     setData([...data, { item: inputValue, form: [] }]);
+  //     setInputValue("");
+  //   }
+  // };
+
   const handleSubmit = () => {
     if (inputValue && !data.some((d) => d.item === inputValue)) {
+      const newTabIndex = data.length; // Index of the new tab
       setData([...data, { item: inputValue, form: [] }]);
+      setActiveTab(newTabIndex); // Automatically open the new tab
       setInputValue("");
     }
   };
+  
 
   const handleAddField = () => {
     if (activeTab >= 0) {
@@ -63,10 +73,24 @@ const ReqForm = () => {
     setData(updatedData);
   };
 
+  // const handleRemoveTab = (tabIndex) => {
+  //   setData(data.filter((_, index) => index !== tabIndex));
+  //   setActiveTab(-1);
+  // };/
+
   const handleRemoveTab = (tabIndex) => {
-    setData(data.filter((_, index) => index !== tabIndex));
-    setActiveTab(-1);
+    const updatedData = data.filter((_, index) => index !== tabIndex);
+  
+    // Determine the next tab to activate
+    let nextActiveTab = -1;
+    if (updatedData.length > 0) {
+      nextActiveTab = tabIndex === data.length - 1 ? tabIndex - 1 : tabIndex;
+    }
+  
+    setData(updatedData);
+    setActiveTab(nextActiveTab); // Set the next tab as active
   };
+  
 
   const [save, setSave] = useState();
 

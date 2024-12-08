@@ -23,6 +23,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Box from '@mui/material/Box';
+import ReqForm from './form';
 
 const drawerWidth = 240;
 
@@ -181,8 +182,11 @@ const Dashboard = () => {
               </TableBody>
             </Table>
           </TableContainer>
+          <ReqForm />
         </Box>
+       
       </Box>
+    
     </ThemeProvider>
   );
 };
